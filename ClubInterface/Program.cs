@@ -1,4 +1,4 @@
-﻿interface IClub
+interface IClub
 {
     //Properties
     public int Id { get; set; }
@@ -42,13 +42,9 @@ class Program
         {
             return FirstName + " " + LastName;
         }
-        public string gender()
+        public string Display()
         {
-            return Gender;
-        }
-        public string hobby()
-        {
-            return Hobby;
+            return "Gender: " + Gender + "\nHobby: " + Hobby + "\nAge: " + Age;
         }
     }
     static void Main(string[] args)
@@ -57,10 +53,9 @@ class Program
         ClubMember Bob = new ClubMember(10, "Bob", "Ross", "Male", 50, "Painting");
         Console.WriteLine($"ID:" + Bob.Id);
         Console.WriteLine($"Name:" + Bob.Fullname());
-        Console.WriteLine($"Gender:" + Bob.gender());
-        Console.WriteLine($"Age:" + Bob.Age + " " + "Hobby:" + Bob.hobby());
+        Console.WriteLine($"{Bob.Display()}");
 
-        
+
         ClubMember Chuck = new ClubMember();
         Chuck.Id = 20;
         Chuck.FirstName = "Chuck";
@@ -70,7 +65,7 @@ class Program
         Chuck.Hobby = "Fighting";
         Console.WriteLine($"ID:" + Chuck.Id);
         Console.WriteLine($"Name:" + Chuck.Fullname());
-        Console.WriteLine($"Gender:" + Chuck.gender());
-        Console.WriteLine($"Age:" + Chuck.Age + " " + "Hobby:" + Chuck.hobby());
+        Console.WriteLine($"{Chuck.Display()}");
+
     }
 }
